@@ -3,7 +3,7 @@ package com.metabirth.view;
 import com.metabirth.model.Enrollment;
 import com.metabirth.model.Payment;
 import com.metabirth.service.EnrollmentService;
-import com.metabirth.service.IntegratedService;
+import com.metabirth.service.EnrollmentAggregateService;
 
 import java.math.BigDecimal;
 import java.sql.Connection;
@@ -13,7 +13,7 @@ import java.util.Scanner;
 
 public class EnrollmentView {
     private final EnrollmentService enrollmentService;
-    private final IntegratedService integratedService;
+    private final EnrollmentAggregateService integratedService;
     private final Scanner scanner;
 
     /*
@@ -23,7 +23,7 @@ public class EnrollmentView {
      * */
     public EnrollmentView(Connection connection) {
         this.enrollmentService = new EnrollmentService(connection);
-        this.integratedService = new IntegratedService(connection);
+        this.integratedService = new EnrollmentAggregateService(connection);
         this.scanner = new Scanner(System.in);
     }
 

@@ -1,7 +1,7 @@
 package com.metabirth.view;
 
 import com.metabirth.model.Payment;
-import com.metabirth.service.IntegratedService;
+import com.metabirth.service.EnrollmentAggregateService;
 import com.metabirth.service.PaymentService;
 
 import java.math.BigDecimal;
@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 public class PaymentView {
     private final PaymentService paymentService;
-    private final IntegratedService integratedService;
+    private final EnrollmentAggregateService integratedService;
     private final Scanner scanner;
 
     /*
@@ -22,7 +22,7 @@ public class PaymentView {
      * */
     public PaymentView(Connection connection) {
         this.paymentService = new PaymentService(connection);
-        this.integratedService = new IntegratedService(connection);
+        this.integratedService = new EnrollmentAggregateService(connection);
         this.scanner = new Scanner(System.in);
     }
 

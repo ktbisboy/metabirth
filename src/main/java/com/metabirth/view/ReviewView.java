@@ -1,7 +1,7 @@
 package com.metabirth.view;
 
 import com.metabirth.model.Review;
-import com.metabirth.service.IntegratedService;
+import com.metabirth.service.EnrollmentAggregateService;
 import com.metabirth.service.ReviewService;
 
 import java.sql.Connection;
@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 public class ReviewView {
     private final ReviewService reviewService;
-    private final IntegratedService integratedService;
+    private final EnrollmentAggregateService integratedService;
     private final Scanner scanner;
 
     /*
@@ -21,7 +21,7 @@ public class ReviewView {
      * */
     public ReviewView(Connection connection) {
         this.reviewService = new ReviewService(connection);
-        this.integratedService = new IntegratedService(connection);
+        this.integratedService = new EnrollmentAggregateService(connection);
         this.scanner = new Scanner(System.in);
     }
 

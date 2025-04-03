@@ -12,14 +12,14 @@ import org.slf4j.LoggerFactory;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-public class IntegratedService {
-    private static final Logger log = LoggerFactory.getLogger(IntegratedService.class);
+public class EnrollmentAggregateService {
+    private static final Logger log = LoggerFactory.getLogger(EnrollmentAggregateService.class);
     private final EnrollmentDAO enrollmentDAO;
     private final PaymentDAO paymentDAO;
     private final ReviewDAO reviewDAO;
     private final Connection connection;
 
-    public IntegratedService(Connection connection) {
+    public EnrollmentAggregateService(Connection connection) {
         this.connection = connection;
         this.enrollmentDAO = new EnrollmentDAO(connection);
         this.paymentDAO = new PaymentDAO(connection);
